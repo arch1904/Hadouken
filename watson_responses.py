@@ -20,12 +20,12 @@ class watson:
         context = self.our_context)
         json_string = json.dumps(response, indent=2)
         #print(json_string)
-
+        print(json_string)
         #get entities
         entities = response["entities"]
         if len(entities) > 0:
             entity = entities[0]
-            if entity["entity"] == "transportation":
+            if entity["entity"] == "Transportation":
                 self.transport = entity["value"]
             elif entity["entity"] == "place":
                 self.place = entity["value"]
@@ -33,8 +33,6 @@ class watson:
                 self.place = entity["value"]
             elif entity["entity"] == "activities":
                 self.activities = entity["value"]
-
-                pass
             pass
 
         #global our_context
